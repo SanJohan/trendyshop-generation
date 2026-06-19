@@ -20,25 +20,6 @@ body{
     overflow-x:hidden;
 }
 
-/* NAVBAR */
-
-.navbar-custom{
-    background:var(--primary);
-}
-
-.navbar-custom .nav-link{
-    color:rgba(255,255,255,.8);
-    font-weight:600;
-}
-
-.navbar-custom .nav-link:hover{
-    color:#fff;
-}
-
-.navbar-custom .active{
-    color:#fff !important;
-    border-bottom:2px solid var(--secondary);
-}
 
 /* HERO */
 

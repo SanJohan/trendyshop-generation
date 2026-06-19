@@ -9,32 +9,47 @@
 </head>
 <body>
 
-    <header class="header">
-        <nav class="navbar">
-            <div class="navbar__logo">
-                <h2>TrendyShop</h2>
-            </div>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
 
-            <div class="navbar__menu">
-                <a href="#">Inicio</a>
-                <a href="#">Catálogo</a>
-                <a href="#">Quiénes Somos</a>
-                <a href="#">Contáctanos</a>
-            </div>
-
-            <div class="navbar__icons">
-                <input type="hidden" class="navbar__barra-busqueda">
-                <button class="navbar__search" type="button">
-                    <i class="bi bi-search"></i>
-                </button>
-                <div class="navbar__cart">
-                    <a href=""><i class="bi bi-cart3"></i></a>
-                    <span class="navbar__badge">2</span>
-                </div>
-            </div>
-
+    <!-- Mobile Menu Drawer -->
+    <aside id="mobileMenu" class="mobile-nav">
+        <div class="mobile-nav-header">
+            <span>TrendyShop</span>
+            <button onclick="toggleMobileMenu()"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <nav>
+            <a href="#inicio" onclick="toggleMobileMenu()">Inicio</a>
+            <a href="catalogo/index.html" onclick="toggleMobileMenu()">Catálogo</a>
+            <a href="quienes-somos/index.html" onclick="toggleMobileMenu()">Quiénes Somos</a>
+            <a href="contactanos/index.html" onclick="toggleMobileMenu()">Contáctanos</a>
         </nav>
+    </aside>
 
+    <!-- ============================== -->
+    <!-- 1. TOP NAVBAR                   -->
+    <!-- ============================== -->
+    <header class="top-navbar sticky-top">
+        <nav class="custom-container navbar-content">
+            <div class="brand">TrendyShop</div>
+
+            <div class="desktop-links">
+                <a class="active" href="#inicio">Inicio</a>
+                <a href="catalogo/index.html">Catálogo</a>
+                <a href="quienes-somos/index.html">Quiénes Somos</a>
+                <a href="contactanos/index.html">Contáctanos</a>
+            </div>
+
+            <div class="nav-actions">
+                <a class="cart-btn" href="carrito/index.html">
+                    <i class="bi bi-cart3"></i>
+                    <span id="cart-count">0</span>
+                </a>
+                <button class="mobile-menu" onclick="toggleMobileMenu()">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </nav>
     </header>
 
     <main class="carrito">
