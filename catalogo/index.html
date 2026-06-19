@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="../styles/catalogo.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <title>TrendyShop</title>
+</head>
+
+<body id="app">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <aside id="mobileMenu" class="mobile-nav">
+        <div class="mobile-nav-header">
+            <span>TrendyShop</span>
+            <button onclick="toggleMobileMenu()"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <nav>
+            <a href="/index.html" onclick="toggleMobileMenu()">Inicio</a>
+            <a href="/catalogo/index.html" onclick="toggleMobileMenu()">Catálogo</a>
+            <a href="/quienes-somos/index.html" onclick="toggleMobileMenu()">Quiénes Somos</a>
+            <a href="/contactanos/index.html" onclick="toggleMobileMenu()">Contáctanos</a>
+        </nav>
+    </aside>
+
+    <!-- ============================== -->
+    <!-- 1. TOP NAVBAR                   -->
+    <!-- ============================== -->
+    <header class="top-navbar sticky-top">
+        <nav class="custom-container navbar-content">
+            <div class="brand">TrendyShop</div>
+
+            <div class="desktop-links">
+                <a href="/index.html">Inicio</a>
+                <a class="active" href="/catalogo/index.html">Catálogo</a>
+                <a href="/quienes-somos/index.html">Quiénes Somos</a>
+                <a href="/contactanos/index.html">Contáctanos</a>
+            </div>
+
+            <div class="nav-actions">
+                <a class="cart-btn" href="/carrito/index.html">
+                    <i class="bi bi-cart3"></i>
+                    <span id="cart-count">0</span>
+                </a>
+                <button class="mobile-menu" onclick="toggleMobileMenu()">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- ===== SIDEBAR CARRITO ===== -->
+    <aside id="cartSidebar" class="cart">
+
+        <div class="cart__header">
+            <h2 class="cart__title">Carrito</h2>
+            <button id="cartClose" class="cart__close">✕</button>
+        </div>
+
+        <div id="cartItems" class="cart__items">
+            <!-- productos dinámicos -->
+        </div>
+
+        <div class="cart__footer">
+            <div class="cart__total">
+                <span>Total</span>
+                <span id="cartTotal">$0</span>
+            </div>
+            <button class="cart__checkout">Finalizar compra</button>
+        </div>
+
+    </aside>
+
+    <div id="overlay" class="overlay"></div>
+
+
+    <!-- ===== MAIN ===== -->
+    <main id="catalog" class="catalog">
+
+        <!-- HERO / HEADER -->
+        <section class="catalog__header">
+            <h1 class="catalog__title">Nuestro Catálogo</h1>
+            <p class="catalog__description">
+                Descubre piezas exclusivas diseñadas para elevar tu estilo.
+            </p>
+        </section>
+
+
+        <div class="catalog__layout">
+
+            <!-- ===== FILTROS ===== -->
+            <aside id="filters" class="filters">
+
+                <h3 class="filters__title">Filtros</h3>
+
+                <!-- Categorías -->
+                <div class="filters__group">
+                    <p class="filters__label">Categorías</p>
+
+                    <label class="filters__option">
+                        <input type="checkbox" checked> Todas
+                    </label>
+
+                    <label class="filters__option">
+                        <input type="checkbox"> Ropa
+                    </label>
+
+                    <label class="filters__option">
+                        <input type="checkbox"> Accesorios
+                    </label>
+                    <div class="filters__button">
+                        <button id="btn-filtro" class="filters__btn">Filtrar</button>
+                    </div>
+                </div>
+
+                <!-- Estado -->
+                <div class="filters__group">
+                    <p class="filters__label">Estado</p>
+
+                    <span class="filters__tag">In Stock</span>
+                    <span class="filters__tag">New</span>
+                </div>
+
+            </aside>
+
+
+            <!-- ===== PRODUCTOS ===== -->
+            <section id="products" class="products">
+
+                <div class="products__grid">
+
+                    <!-- PRODUCT CARD -->
+                    <article class="product-card">
+
+                        <div class="product-card__image">
+                            <img src="/assets/images/productos/reloj-oro.jpg" alt="imagen-producto">
+                            <span class="product-card__badge">Premium</span>
+                        </div>
+
+                        <div class="product-card__info">
+                            <p class="product-card__category">Accesorios</p>
+                            <h3 class="product-card__title">Reloj oro italiano</h3>
+                            <p class="product-card__price">$120.000.000</p>
+
+                            <button class="product-card__btn">
+                                Agregar al carrito
+                            </button>
+                        </div>
+
+                    </article>
+
+                    <!-- 1 Camisa -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="/assets/images/productos/camisa-blanca.jpg"
+                                alt="Camisa blanca mujer">
+                            <span class="product-card__badge">New</span>
+                        </div>
+                        <div class="product-card__info">
+                            <p class="product-card__category">Ropa</p>
+                            <h3 class="product-card__title">Camisa Blanca</h3>
+                            <p class="product-card__price">$85.000</p>
+                            <button class="product-card__btn">Agregar al carrito</button>
+                        </div>
+                    </article>
+
+                    <!-- 2 Camisa -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="/assets/images/productos/vestido-rosado.png"
+                                alt="Vestido rosado">
+                        </div>
+                        <div class="product-card__info">
+                            <p class="product-card__category">Ropa</p>
+                            <h3 class="product-card__title">Vestido rosado </h3>
+                            <p class="product-card__price">$95.000</p>
+                            <button class="product-card__btn">Agregar al carrito</button>
+                        </div>
+                    </article>
+
+                    <!-- 3 Short -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="/assets/images/productos/short-amarillo.jpg" alt="Short mujer">
+                        </div>
+                        <div class="product-card__info">
+                            <p class="product-card__category">Ropa</p>
+                            <h3 class="product-card__title">Short Denim Casual</h3>
+                            <p class="product-card__price">$70.000</p>
+                            <button class="product-card__btn">Agregar al carrito</button>
+                        </div>
+                    </article>
+
+                    <!-- 4 Pantalón -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="/assets/images/productos/pantalon-beig.jpg"
+                                alt="Pantalón mujer">
+                            <span class="product-card__badge">Premium</span>
+                        </div>
+                        <div class="product-card__info">
+                            <p class="product-card__category">Ropa</p>
+                            <h3 class="product-card__title">Pantalón Elegante</h3>
+                            <p class="product-card__price">$120.000</p>
+                            <button class="product-card__btn">Agregar al carrito</button>
+                        </div>
+                    </article>
+
+                    <!-- 5 Bufanda -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="/assets/images/productos/bufanda-vinotinto.jpg" alt="Bufanda">
+                        </div>
+                        <div class="product-card__info">
+                            <p class="product-card__category">Accesorios</p>
+                            <h3 class="product-card__title">Bufanda Tejida Invierno</h3>
+                            <p class="product-card__price">$45.000</p>
+                            <button class="product-card__btn">Agregar al carrito</button>
+                        </div>
+                    </article>
+
+                    <!-- 6 Cartera -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="/assets/images/productos/cartera-roja.jpg" alt="Cartera">
+                        </div>
+                        <div class="product-card__info">
+                            <p class="product-card__category">Accesorios</p>
+                            <h3 class="product-card__title">Cartera Cuero Moderna</h3>
+                            <p class="product-card__price">$150.000</p>
+                            <button class="product-card__btn">Agregar al carrito</button>
+                        </div>
+                    </article>
+
+                    <!-- 7 Collar -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="/assets/images/productos/collar-perlas.jpg" alt="Collar perlas">
+                        </div>
+                        <div class="product-card__info">
+                            <p class="product-card__category">Accesorios</p>
+                            <h3 class="product-card__title">Collar de Perlas Elegante</h3>
+                            <p class="product-card__price">$110.000</p>
+                            <button class="product-card__btn">Agregar al carrito</button>
+                        </div>
+                    </article>
+
+                    <!-- 8 Vestido -->
+                    <article class="product-card">
+                        <div class="product-card__image">
+                            <img src="/assets/images/productos/camisa-negra.jpg" alt="Camisa mujer">
+                            <span class="product-card__badge">New</span>
+                        </div>
+                        <div class="product-card__info">
+                            <p class="product-card__category">Ropa</p>
+                            <h3 class="product-card__title">Camisa negra</h3>
+                            <p class="product-card__price">$140.000</p>
+                            <button class="product-card__btn">Agregar al carrito</button>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer" class="footer">
+
+        <div class="footer__container">
+
+            <div class="footer__brand">
+                <h4>TrendyShop</h4>
+                <p>Moda urbana premium.</p>
+            </div>
+
+            <div class="footer__links">
+                <h5>Explorar</h5>
+                <ul>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Pagos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__links">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__subscribe">
+                <h5>Suscríbete</h5>
+                <input type="email" placeholder="Email">
+                <button>Ir</button>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            © 2026 TrendyShop
+        </div>
+
+    </footer>
+<script src="/js/catalogo.js"></script>
+</body>
+
+</html>

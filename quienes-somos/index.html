@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiénes Somos | TrendyShop</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/quienes-somos.css">
+
+    <link rel="stylesheet" href="/styles/navbar.css">
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <aside id="mobileMenu" class="mobile-nav">
+        <div class="mobile-nav-header">
+            <span>TrendyShop</span>
+            <button onclick="toggleMobileMenu()"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <nav>
+            <a href="/index.html" onclick="toggleMobileMenu()">Inicio</a>
+            <a href="/catalogo/index.html" onclick="toggleMobileMenu()">Catálogo</a>
+            <a href="/quienes-somos/index.html" onclick="toggleMobileMenu()">Quiénes Somos</a>
+            <a href="/contactanos/index.html" onclick="toggleMobileMenu()">Contáctanos</a>
+        </nav>
+    </aside>
+
+    <!-- ============================== -->
+    <!-- 1. TOP NAVBAR                   -->
+    <!-- ============================== -->
+    <header class="top-navbar sticky-top">
+        <nav class="custom-container navbar-content">
+            <div class="brand">TrendyShop</div>
+
+            <div class="desktop-links">
+                <a href="/index.html">Inicio</a>
+                <a href="/catalogo/index.html">Catálogo</a>
+                <a class="active" href="/quienes-somos/index.html">Quiénes Somos</a>
+                <a href="/contactanos/index.html">Contáctanos</a>
+            </div>
+
+            <div class="nav-actions">
+                <a class="cart-btn" href="/carrito/index.html">
+                    <i class="bi bi-cart3"></i>
+                    <span id="cart-count">0</span>
+                </a>
+                <button class="mobile-menu" onclick="toggleMobileMenu()">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- SideNavBar (Mobile Context) -->
+    <main>
+        <!-- Hero Section -->
+
+        <section class="hero d-flex align-items-center justify-content-center">
+
+            <div class="hero-bg"
+                style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAuNlvTsQOhm-mHu3HmP2CFC-WIIBDOSNvHqTQbsbUdoK8erjRd8fRrzkwTYHmRgh7ClxK5OgtJ8xXE0RyojsWFoMsJGIp29uTuEJ0LYX-DLlOOse0SywykLvNzVrXoL4OK5V_cEGq7CUyti_4qBlf3QNWMAjE6FggGqE8jq8hrcy4MAopZUo2S1AKf9cPguyIkuqska26Ma8sRjAIkfY2B2GN9FdzU7RUsBORUahVQigXWdZNbi01RUBPYTN6wq4R9gaPox3ZfDqk')">
+            </div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="container text-center hero-content">
+
+                <h1>
+                    Nuestra Esencia, Tu Estilo
+                </h1>
+
+                <p class="mx-auto mt-4" style="max-width:700px">
+                    En TrendyShop, creemos que la moda es la herramienta más poderosa
+                    para expresar quién eres sin pronunciar una sola palabra.
+                </p>
+
+            </div>
+
+        </section>
+        <!-- Our Story (Bento Style Layout) -->
+        <section class="section-padding">
+
+            <div class="container">
+
+                <div class="row g-5 align-items-center">
+
+                    <div class="col-lg-7 reveal">
+
+                        <span class="text-uppercase fw-bold text-warning">
+                            Nuestra Historia
+                        </span>
+
+                        <h2 class="display-6 fw-bold mt-3 mb-4">
+                            Moda con propósito,
+                            calidad sin compromisos.
+                        </h2>
+
+                        <p>Nacimos de una idea simple pero ambiciosa: democratizar la moda de alta gama. Observamos un
+                            mercado dividido entre el lujo inaccesible y la moda rápida de baja calidad. TrendyShop
+                            surgió para llenar ese vacío.</p>
+                        <p>Nuestras colecciones están diseñadas para la persona moderna que valora la durabilidad de los
+                            materiales y la originalidad del diseño, pero que también busca un precio justo. Cada prenda
+                            en nuestro catálogo cuenta una historia de meticulosidad y pasión por el detalle.</p>
+                        <p>No solo vendemos ropa; ofrecemos una extensión de tu personalidad. Moda que te acompaña en
+                            tus retos diarios y celebra tus triunfos.</p>
+
+                    </div>
+
+                    <div class="col-lg-5 reveal">
+
+                        <div class="position-relative">
+
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvBlDLYRQI5-VpnkZrdr8lU1-VYSS7-naB4OHWVF2l1Csl0VZh7inCgAnSYYPpGspUQyWAXA8mZtR0_E7iPZdzGzniF2EtDiZlB8yWlftw02XLEKnSvWfk9INo6ar1n-M3A40Dorid074_9Vn2FL3Ibvr_ki_f69bLhvTmYXg2w2uEJajVpiDvWgtMQ5U4qW-HwE2nP8Xa3WyJovTp10T21oz-CFZCVt4QHbQ75IPhDa8x6GYTkzZTBFbrXcexESGLpbF3_cGuOoY"
+                                class="img-fluid rounded-4 shadow-lg">
+
+                            <div class="position-absolute bottom-0 start-0 bg-white p-4 rounded shadow m-4">
+
+                                <h2 class="text-success fw-bold">
+                                    100%
+                                </h2>
+
+                                <small>Diseño Original</small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Mission & Vision (Asymmetric Cards) -->
+        <section class="section-padding section-light">
+
+            <div class="container">
+
+                <div class="row g-5">
+
+                    <div class="col-md-6">
+
+                        <div class="custom-card p-5 h-100 reveal">
+
+                            <div class="icon-circle bg-light mb-4">
+                                <span class="material-symbols-outlined fs-1 text-success">
+                                    rocket_launch
+                                </span>
+                            </div>
+
+                            <h3>Misión</h3>
+
+                            <p>
+                                Brindar productos modernos y versátiles que empoderen a nuestros clientes para proyectar su mejor versión. Nos comprometemos a mantener los más altos estándares de calidad mientras optimizamos nuestros procesos para ofrecer precios competitivos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="p-5 rounded-4 text-white h-100 reveal" style="background:#2f6762">
+
+                            <div class="icon-circle bg-white bg-opacity-25 mb-4">
+                                <span class="material-symbols-outlined fs-1">
+                                    visibility
+                                </span>
+                            </div>
+
+                            <h3>Visión</h3>
+
+                            <p>
+                                Convertirse en una marca referente del estilo contemporáneo a nivel internacional, liderando la industria mediante la innovación constante y una conexión genuina con nuestra comunidad, sin olvidar nunca nuestras raíces de cercanía y honestidad.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- Values Section (Grid of cards) -->
+        <section class="section-values">
+
+            <div class="container">
+
+                <div class="text-center mb-5">
+
+                    <h2 class="section-title">
+                        Valores que nos definen
+                    </h2>
+
+                    <p class="section-subtitle">
+                        Los pilares sobre los que construimos cada relación y cada colección.
+                    </p>
+
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- CARD 1 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+
+                        <div class="custom-card p-4 h-100 reveal">
+
+                            <span class="material-symbols-outlined value-icon">
+                                verified
+                            </span>
+
+                            <h4>Calidad</h4>
+
+                            <p>
+                                No negociamos con la excelencia.
+                                Desde la fibra hasta el acabado final.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+
+                        <div class="custom-card p-4 h-100 reveal">
+
+                            <span class="material-symbols-outlined value-icon">
+                                visibility_lock
+                            </span>
+
+                            <h4>Transparencia</h4>
+
+                            <p>
+                                Comunicación abierta sobre nuestros procesos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CARD 3 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+
+                        <div class="custom-card p-4 h-100 reveal">
+
+                            <span class="material-symbols-outlined value-icon">
+                                group
+                            </span>
+
+                            <h4>Cercanía</h4>
+
+                            <p>
+                                Escuchamos las necesidades de nuestros clientes.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CARD 4 -->
+                    <div class="col-12 col-md-6 col-lg-3">
+
+                        <div class="custom-card p-4 h-100 reveal">
+
+                            <span class="material-symbols-outlined value-icon">
+                                auto_awesome
+                            </span>
+
+                            <h4>Innovación</h4>
+
+                            <p>
+                                Buscamos constantemente nuevas tendencias y tecnologías.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <section class="trust-section">
+
+                <div class="container">
+
+                    <div class="row g-5">
+
+                        <!-- POLICIES -->
+                        <div class="col-12 col-lg-6 trust-content reveal">
+
+                            <h2 class="section-title mb-4">
+                                Confianza TrendyShop
+                            </h2>
+
+                            <div class="policy-card">
+
+                                <span class="material-symbols-outlined policy-icon">
+                                    assignment_return
+                                </span>
+
+                                <div>
+
+                                    <h4>30 días de devolución</h4>
+
+                                    <p>
+                                        Si no te enamoras de tu compra,
+                                        tienes un mes completo para devolverla.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="policy-card">
+
+                                <span class="material-symbols-outlined policy-icon">
+                                    local_shipping
+                                </span>
+
+                                <div>
+
+                                    <h4>Envíos Seguros</h4>
+
+                                    <p>
+                                        Garantizamos que tu pedido llegará
+                                        en perfectas condiciones.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="policy-card">
+
+                                <span class="material-symbols-outlined policy-icon">
+                                    support_agent
+                                </span>
+
+                                <div>
+
+                                    <h4>Soporte 24/7</h4>
+
+                                    <p>
+                                        Nuestro equipo está disponible
+                                        para ayudarte.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!-- FAQ -->
+                        <div class="col-12 col-lg-6">
+
+                            <h2 class="section-title mb-4">
+                                Preguntas Frecuentes
+                            </h2>
+                            <div class="accordion" id="faqAccordion">
+
+                                <div class="accordion-item">
+
+                                    <h2 class="accordion-header">
+
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq1">
+
+                                            ¿Cómo elijo mi talla correcta?
+
+                                        </button>
+
+                                    </h2>
+
+                                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                                        <div class="accordion-body">
+
+                                            Contamos con una guía detallada...
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="accordion-item">
+
+                                    <h2 class="accordion-header">
+
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq2">
+
+                                            ¿Cuáles son los métodos de pago?
+
+                                        </button>
+
+                                    </h2>
+
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                                        <div class="accordion-body">
+
+                                            Aceptamos tarjetas de crédito/débito (Visa, Mastercard, Amex), PayPal y
+                                            transferencias bancarias directas con cifrado de seguridad total.
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="accordion-item">
+
+                                    <h2 class="accordion-header">
+
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq3">
+
+                                            ¿Tienen tiendas físicas?
+
+                                        </button>
+
+                                    </h2>
+
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                                        <div class="accordion-body">
+
+                                            Actualmente somos una tienda 100% online para reducir costes y ofrecerte los
+                                            mejores precios, pero realizamos Pop-up stores ocasionales.
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- Columna 1 -->
+                <div class="col-12 col-md-3">
+
+                    <h4 class="footer-logo">
+                        TrendyShop
+                    </h4>
+
+                    <p class="footer-description">
+                        Moda consciente y de alta calidad para
+                        quienes no temen destacar.
+                    </p>
+
+                    <div class="social-icons">
+
+                        <a href="#">
+                            <span class="material-symbols-outlined">
+                                face
+                            </span>
+                        </a>
+
+                        <a href="#">
+                            <span class="material-symbols-outlined">
+                                camera
+                            </span>
+                        </a>
+
+                        <a href="#">
+                            <span class="material-symbols-outlined">
+                                share
+                            </span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Columna 2 -->
+                <div class="col-12 col-md-3">
+
+                    <h5 class="footer-title">
+                        Compañía
+                    </h5>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="#">
+                                Quiénes Somos
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Trabaja con Nosotros
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Blog
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Columna 3 -->
+                <div class="col-12 col-md-3">
+
+                    <h5 class="footer-title">
+                        Legal
+                    </h5>
+
+                    <ul class="footer-links">
+
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Pagos</a></li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Columna 4 -->
+                <div class="col-12 col-md-3">
+
+                    <h5 class="footer-title">
+                        Soporte
+                    </h5>
+
+                    <ul class="footer-links">
+
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Ayuda y FAQ</a></li>
+                        <li><a href="#">Contacto</a></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+
+    <div
+        class="d-flex flex-column flex-md-row
+               justify-content-between
+               align-items-center">
+
+        <p class="copyright">
+            © 2024 TrendyShop.
+            Todos los derechos reservados.
+        </p>
+
+        <div class="payment-icons">
+
+            <span class="material-symbols-outlined">
+                payments
+            </span>
+
+            <span class="material-symbols-outlined">
+                contactless
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+    </footer>
+    <script>
+        // Simple Reveal On Scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Initial check
+        reveal();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
