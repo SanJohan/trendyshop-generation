@@ -1,0 +1,596 @@
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8faf8;
+  color: #191c1c;
+  line-height: 1.5;
+}
+
+/* ===== VARIABLES ===== */
+:root {
+  --color-primary: #2f6762;
+  --color-secondary: #fdd355;
+  --color-bg: #f8faf8;
+  --color-surface: #ffffff;
+  --color-border: #e1e3e1;
+  --color-text-muted: #707977;
+
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* ===== LAYOUT GENERAL ===== */
+.container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+/* ===== NAVBAR ===== */
+/* ===== NAVBAR (UPGRADE REAL) ===== */
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--color-primary);
+  z-index: 100;
+
+  /* profundidad */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* contenedor */
+.nav__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+}
+
+/* logo */
+.nav__logo {
+  font-weight: 700;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* menú */
+.nav__menu {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+/* links */
+.nav__item a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: var(--transition);
+}
+
+/* línea animada */
+.nav__item a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--color-secondary);
+  transition: var(--transition);
+}
+
+/* hover */
+.nav__item a:hover {
+  color: white;
+}
+
+.nav__item a:hover::after {
+  width: 100%;
+}
+
+/* activo */
+.nav__item--active a {
+  color: white;
+}
+
+.nav__item--active a::after {
+  width: 100%;
+}
+
+/* ===== ACTIONS ===== */
+.nav__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* input mejorado */
+.nav__search {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+
+  /* mejora */
+  background: rgba(255,255,255,0.15);
+  color: white;
+  transition: var(--transition);
+}
+
+/* placeholder visible */
+.nav__search::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* focus */
+.nav__search:focus {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* ===== CARRITO ===== */
+.nav__cart-btn {
+  position: relative;
+
+  /* 🔥 blanco visible */
+  background: #ffffff;
+
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+
+  /* profundidad */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+  transition: all 0.25s ease;
+}
+
+/* 🔥 HOVER (amarillo como querías) */
+.nav__cart-btn:hover {
+  background: var(--color-secondary);
+  color: #333;
+  transform: scale(1.1);
+}
+
+/* 🔥 CLICK */
+.nav__cart-btn:active {
+  transform: scale(0.95);
+}
+
+/* contador */
+.nav__cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--color-secondary);
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  font-weight: bold;
+  color: black;
+
+  /* mini animación */
+  animation: pop 0.3s ease;
+}
+
+/* animación contador */
+@keyframes pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+}
+
+/* ===== CART ===== */
+.cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100%;
+  background: white;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+}
+
+.cart.active {
+  right: 0;
+}
+
+.cart__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cart__items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.cart__footer {
+  padding: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.cart__total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cart__checkout {
+  width: 100%;
+  padding: 12px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+/* ===== CATALOG ===== */
+.catalog {
+  padding: 40px 24px;
+}
+
+.catalog__header {
+  margin-bottom: 24px;
+}
+
+.catalog__title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.catalog__description {
+  color: var(--color-text-muted);
+}
+
+/* layout */
+.catalog__layout {
+  display: flex;
+  gap: 24px;
+}
+
+/* ===== FILTERS ===== */
+.filters {
+  width: 250px;
+  background: white;
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  height: fit-content;
+}
+
+.filters__group {
+  margin-bottom: 20px;
+}
+
+.filters__label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.filters__option {
+  display: block;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.filters__tag {
+  display: inline-block;
+  background: var(--color-secondary);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+#btn-filtro {
+  width: 100%;
+  padding: 10px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+
+  transition: all 0.1s ease;
+}
+
+/* hover */
+#btn-filtro:hover {
+  background: #25524e; /* mismo color pero más oscuro */
+}
+
+/* click */
+#btn-filtro:active {
+  transform: scale(0.90);
+}
+
+/* focus */
+#btn-filtro:focus {
+  outline: 2px solid var(--color-secondary);
+}
+
+/* ===== PRODUCTS ===== */
+/* ===== PRODUCTS ===== */
+.products {
+  flex: 1;
+}
+
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* 🔥 responsive real */
+  gap: 24px;
+}
+
+/* ===== PRODUCT CARD ===== */
+.product-card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== IMAGE (AQUÍ ESTÁ EL FIX REAL) ===== */
+.product-card__image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 🔥 mantiene proporción perfecta */
+  overflow: hidden;
+  background: #f3f3f3;
+}
+
+/* imagen bien adaptada */
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🔥 evita que se corten */
+  object-position: center;
+  padding: 10px; /* 🔥 aire visual */
+
+  transition: transform 0.4s ease;
+}
+
+/* zoom suave */
+.product-card:hover .product-card__image img {
+  transform: scale(1.05);
+}
+
+/* badge */
+.product-card__badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--color-primary);
+  color: white;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+/* ===== INFO ===== */
+.product-card__info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-card__category {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.product-card__title {
+  font-weight: 600;
+  margin: 6px 0;
+  line-height: 1.3;
+}
+
+/* evita títulos muy largos */
+.product-card__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* precio */
+.product-card__price {
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+/* botón */
+.product-card__btn {
+  margin-top: auto;
+  padding: 10px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.product-card__btn:hover {
+  transform: translateY(-2px);
+}
+
+.product-card__btn:active {
+  transform: scale(0.95);
+}
+/* ===== FOOTER ===== */
+.footer {
+  background: linear-gradient(to top, #e7e8e7, #f4f5f4);
+  padding: 60px 24px 30px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* contenedor */
+.footer__container {
+  max-width: 1280px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* ===== BLOQUES ===== */
+.footer__brand h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+
+.footer__brand p {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+/* títulos */
+.footer__links h5,
+.footer__subscribe h5 {
+  margin-bottom: 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #444;
+}
+
+/* listas */
+.footer__links ul {
+  list-style: none;
+}
+
+.footer__links li {
+  margin-bottom: 8px;
+}
+
+/* links */
+.footer__links a {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  transition: var(--transition);
+  position: relative;
+}
+
+/* efecto hover elegante */
+.footer__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: var(--color-primary);
+  transition: var(--transition);
+}
+
+.footer__links a:hover {
+  color: var(--color-primary);
+}
+
+.footer__links a:hover::after {
+  width: 100%;
+}
+
+/* ===== SUBSCRIBE ===== */
+.footer__subscribe input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.footer__subscribe input:focus {
+  border-color: var(--color-primary);
+}
+
+.footer__subscribe button {
+  width: 100%;
+  padding: 10px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.footer__subscribe button:hover {
+  background: #25524e;
+}
+
+/* ===== DIVISOR ===== */
+.footer__bottom {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer__subscribe input,
+  .footer__subscribe button {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
