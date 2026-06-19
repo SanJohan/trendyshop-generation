@@ -1,0 +1,364 @@
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+        font-family:Arial, Helvetica, sans-serif;
+        background:#f5f5f5;
+    }
+
+
+    .navbar{
+        background:#1f5f5b;
+        padding:20px 50px;
+
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .navbar__logo h2{
+        color:white;
+    }
+
+    .navbar__menu{
+        display:flex;
+        gap:30px;
+    }
+
+    .navbar__menu a{
+        color:white;
+        text-decoration:none;
+        font-size:14px;
+
+    }
+
+    .navbar__icons{
+        display:flex;
+        gap:20px;
+        color:white;
+        font-size:20px;
+        align-items:center;
+        align-content: center;
+    }
+
+    .navbar__search{
+        background-color: transparent;
+        border: none;
+    }
+
+    .bi{
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    .navbar__cart{
+        position:relative;
+    }
+
+    .navbar__badge{
+        position:absolute;
+        top:-10px;
+        right:-10px;
+        background:#e74c3c;
+        color:white;
+        width:18px;
+        height:18px;
+        border-radius:50%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        font-size:11px;
+    }
+
+    .carrito{
+        width:90%;
+        margin:40px auto;
+    }
+
+    .carrito__encabezado{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    #flecha{
+        color: #1f5f5b;
+        font-size: 18px;
+        font-weight: bolder;
+    }
+
+    .carrito__titulo{
+        margin-bottom:10px;
+    }
+
+    .carrito__texto{
+        color:gray;
+    }
+
+    .carrito__volver{
+        display: flex;
+        gap: 8px;
+        margin: 0 2px;
+    }
+
+    .carrito__seguir{
+        text-decoration:none;
+        color:#1f5f5b;
+
+        transition:all .3s ease;
+    }
+
+    .carrito__seguir:hover{
+        color:#4f9;
+        text-decoration-line:underline;
+        text-underline-offset:4px;
+    }
+
+
+    .carrito__contenido{
+        display:flex;
+        gap:25px;
+        margin-top:30px;
+    }
+
+
+    .productos{
+        flex:2;
+    }
+
+    .producto{
+        background:white;
+        display:flex;
+        align-items:center;
+        gap:20px;
+        padding:20px;
+        border-radius:10px;
+        margin-bottom:20px;
+        box-shadow: 0 0 2px #444;
+    }
+
+    .producto__imagen{
+        width:120px;
+        height:120px;
+        object-fit:cover;
+        border-radius:8px;
+    }
+
+    .producto__info{
+        flex:1;
+    }
+
+    .producto__categoria{
+        font-size:12px;
+        color:#999;
+        margin-bottom:5px;
+    }
+
+    .producto__nombre{
+        margin-bottom:5px;
+    }
+
+    .producto__detalle{
+        color:#666;
+        margin-bottom:15px;
+    }
+
+    .producto__acciones{
+        display:flex;
+        align-items:center;
+        gap:20px;
+    }
+
+    .producto__cantidad{
+        display:flex;
+        align-items:center;
+    }
+
+    .producto__cantidad button{
+        width:35px;
+        height:35px;
+        border:1px solid #ccc;
+        background:white;
+        cursor:pointer;
+    }
+
+    .producto__cantidad span{
+        width:40px;
+        text-align:center;
+    }
+
+    .producto__eliminar{
+        color:red;
+        text-decoration:none;
+        font-size:14px;
+    }
+
+    .producto__precio{
+        font-size:32px;
+        font-weight:bold;
+        color:#1f5f5b;
+    }
+
+
+    .resumen{
+        flex:1;
+        background:white;
+        padding:25px;
+        border-radius:10px;
+        height:fit-content;
+    }
+
+    .resumen__titulo{
+        margin-bottom:25px;
+    }
+
+    .resumen__fila{
+        display:flex;
+        justify-content:space-between;
+        margin-bottom:15px;
+    }
+
+    .resumen__total{
+        display:flex;
+        justify-content:space-between;
+
+        font-size:24px;
+        font-weight:bold;
+
+        margin-top:20px;
+    }
+
+    .resumen__boton{
+        width:100%;
+        margin-top:25px;
+
+        padding:15px;
+
+        border:none;
+        border-radius:8px;
+
+        background:#d89a84;
+        color:white;
+
+        cursor:pointer;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:10px;
+
+        font-weight:bold;
+
+        transition:all .3s ease;
+    }
+
+    .resumen__boton:hover{
+        background:#c27f68;
+        transform:translateY(-3px);
+        box-shadow:0 8px 18px rgba(0,0,0,.15);
+    }
+
+    .beneficios{
+        margin-top:25px;
+
+        display:flex;
+        gap:20px;
+    }
+
+    .beneficios__card{
+        flex:1;
+
+        background:white;
+
+        padding:20px;
+
+        border-radius:10px;
+
+        display:flex;
+        gap:15px;
+    }
+
+    .beneficios__card i{
+        font-size:25px;
+        color:#1f5f5b;
+    }
+
+    .beneficios__card h4{
+        margin-bottom:5px;
+    }
+
+
+    .footer{
+        margin-top:50px;
+
+        background:#e8e8e8;
+
+        display:flex;
+        justify-content:space-between;
+
+        padding:40px 50px;
+    }
+
+    .footer__columna{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .footer__columna a{
+        text-decoration:none;
+        color:black;
+    }
+
+    .footer__columna input{
+        padding:10px;
+    }
+
+    .footer__columna button{
+        padding:10px;
+        border:none;
+        background:#1f5f5b;
+        color:white;
+        cursor:pointer;
+    }
+
+    @media(max-width:768px){
+
+        .navbar{
+            flex-direction:column;
+            gap:15px;
+        }
+
+        .navbar__menu{
+            flex-direction:column;
+            text-align:center;
+        }
+
+        .carrito__encabezado{
+            flex-direction:column;
+            gap:15px;
+            align-items:flex-start;
+        }
+
+        .carrito__contenido{
+            flex-direction:column;
+        }
+
+        .producto{
+            flex-direction:column;
+            text-align:center;
+        }
+
+        .beneficios{
+            flex-direction:column;
+        }
+
+        .footer{
+            flex-direction:column;
+            gap:30px;
+        }
+    }
