@@ -13,6 +13,22 @@ function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
+function renderCart() {
+    const countElement = document.getElementById('cart-count');
+    const totalItems = carrito.length;
+    if (countElement) countElement.innerText = totalItems;
+}
+
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('mobileMenuOverlay');
+    menu.classList.toggle('open');
+    overlay.classList.toggle('open');
+}
+
+// Inicializar el carrito al cargar
+renderCart();
+
 botonCompra.addEventListener("click", confirmarCompra);
 
 function confirmarCompra() {
@@ -99,6 +115,7 @@ function mostrarCarrito() {
 
     asignarEventosBotones();
     actualizarResumen();
+    renderCart();
 }
 
 function asignarEventosBotones() {
