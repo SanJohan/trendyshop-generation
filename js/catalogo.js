@@ -1,7 +1,17 @@
 let carrito = JSON.parse(localStorage.getItem("carrito") ?? "[]");
 
+function renderCart() {
+    const countElement = document.getElementById('cart-count');
+    const totalItems = carrito.length;
+    if (countElement) countElement.innerText = totalItems;
+}
+
+// Inicializar el carrito al cargar
+renderCart();
+
 function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
+    renderCart();
 }
 
 const botones = document.querySelectorAll(".product-card__btn");
