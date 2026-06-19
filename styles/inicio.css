@@ -33,27 +33,6 @@ body {
     color: var(--text);
 }
 
-.custom-container {
-    width: 100%;
-    max-width: 1280px;
-    margin: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-@media (min-width: 768px) {
-    .custom-container {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-}
-
-@media (min-width: 1280px) {
-    .custom-container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-}
 
 html, body {
     overflow-x: hidden;
