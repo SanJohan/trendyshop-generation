@@ -51,31 +51,35 @@ const productos = document.querySelectorAll(".product-card");
 
 btnFiltro.addEventListener("click", () => {
 
-    const checkboxes = document.querySelectorAll(".filters__option input");
-    const productos = document.querySelectorAll(".product-card");
+    try{
+        const checkboxes = document.querySelectorAll(".filters__option input");
+        const productos = document.querySelectorAll(".product-card");
 
-    let categoriasSeleccionadas = [];
+        let categoriasSeleccionadas = [];
 
-    checkboxes.forEach(ch => {
-        if (ch.checked && ch.parentElement.textContent.trim() !== "Todas") {
-            categoriasSeleccionadas.push(ch.parentElement.textContent.trim());
-        }
-    });
+        checkboxes.forEach(ch => {
+            if (ch.checked && ch.parentElement.textContent.trim() !== "Todas") {
+                categoriasSeleccionadas.push(ch.parentElement.textContent.trim());
+            }
+        });
 
-    productos.forEach(card => {
+        productos.forEach(card => {
 
-        const categoria = card
-            .querySelector(".product-card__category")
-            .textContent.trim();
+            const categoria = card
+                .querySelector(".product-card__category")
+                .textContent.trim();
 
-        if (
-            categoriasSeleccionadas.length === 0 ||
-            categoriasSeleccionadas.includes(categoria)
-        ) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
+            if (
+                categoriasSeleccionadas.length === 0 ||
+                categoriasSeleccionadas.includes(categoria)
+            ) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
 
-    });
+        });
+    } catch(e){
+        console.log(e)
+    }
 });
