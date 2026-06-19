@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactanos</title>
+    <link rel="stylesheet" href="/trendyshop-generation/styles/contactanos.css">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__logo">TrendyShop</div>
+                <ul class="nav__menu">
+                    <li class="nav__item"><a href="/index.html">Inicio</a></li>
+                    <li class="nav__item"><a href="/catalogo/index.html">Catálogo</a></li>
+                    <li class="nav__item "><a href="/quienes-somos/index.html">Quiénes Somos</a></li>
+                    <li class="nav__item nav__item--active"><a href="/contactanos/index.html">Contáctanos</a></li>
+                </ul>
+                <div class="nav__actions">
+                    <input id="searchInput" class="nav__search" type="text" placeholder="Buscar productos...">
+                    <button id="cartToggle" class="nav__cart-btn">🛒<span id="cartCount" class="nav__cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="contacto">
+        <section class="contacto__hero">
+            <div class="container">
+                <h1 class="contacto__titulo">Contáctanos</h1>
+                <p class="contacto__descripcion">Estamos aquí para ayudarte. Si tienes alguna duda sobre tu pedido, envíos o simplemente quieres saludarnos, escríbenos.</p>
+            </div>
+        </section>
+        <section class="contacto__contenido">
+            <aside class="contacto__info">
+                <div class="info-card">
+                    <h2>Información de contacto</h2>
+                    <div class="info-item">
+                        <span>📧</span>
+                        <div>
+                            <h4>Correo de soporte</h4>
+                            <p>hola@trendyshop.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span>💬</span>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+57 300 000 0000</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span>🕒</span>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Lunes a Viernes 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacto__imagen">
+                    <img src="https://images.pexels.com/photos/15170528/pexels-photo-15170528.jpeg" alt="Tienda TrendyShop">
+                </div>
+            </aside>
+            <section class="contacto__formulario">
+                <form id="contactForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" placeholder="Tu nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" id="correo" placeholder="tu@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" rows="6" placeholder="¿En qué podemos ayudarte?" required>
+                </textarea>
+                    </div>
+                    <button class="btn-enviar" type="submit">
+                        Enviar mensaje
+                    </button>
+                </form>
+            </section>
+        </section>
+        <section class="newsletter">
+            <div class="container">
+                <h2>Únete a nuestra comunidad</h2>
+                <p>Recibe novedades, ofertas exclusivas y consejos de moda.</p>
+                <div class="newsletter__form">
+                    <input type="email" placeholder="Tu correo electrónico">
+                    <button>
+                        Suscribirse
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="footer">
+        <div class="footer__container">
+            <div class="footer__brand">
+                <h4>TrendyShop</h4>
+                <p>Moda urbana premium.</p>
+            </div>
+            <div class="footer__links">
+                <h5>Explorar</h5>
+                <ul>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Pagos</a></li>
+                </ul>
+            </div>
+            <div class="footer__links">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
+            <div class="footer__subscribe">
+                <h5>Suscríbete</h5>
+                <input type="email" placeholder="Email">
+                <button>Ir</button>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            © 2026 TrendyShop
+        </div>
+    </footer>
+</body>
+
+</html>
