@@ -11,6 +11,7 @@
 
     <!-- Estilos propios -->
     <link rel="stylesheet" href="styles/inicio.css">
+    <link rel="stylesheet" href="styles/navbar.css">
 </head>
 <body>
 
@@ -46,10 +47,10 @@
             </div>
 
             <div class="nav-actions">
-                <button class="cart-btn" onclick="toggleCart()">
+                <a class="cart-btn" href="carrito/index.html">
                     <i class="bi bi-cart3"></i>
                     <span id="cart-count">0</span>
-                </button>
+                </a>
                 <button class="mobile-menu" onclick="toggleMobileMenu()">
                     <i class="bi bi-list"></i>
                 </button>
@@ -57,18 +58,7 @@
         </nav>
     </header>
 
-    <!-- ============================== -->
-    <!-- 2. CARRITO LATERAL              -->
-    <!-- ============================== -->
-    <aside id="cartSidebar" class="cart-sidebar">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h3>Mi Carrito</h3>
-            <button class="btn btn-danger btn-sm" onclick="toggleCart()">X</button>
-        </div>
-        <div id="cartItems"></div>
-        <hr>
-        <h5>Total: <span id="cartTotal">$0</span></h5>
-    </aside>
+    
 
     <!-- ============================== -->
     <!-- 3. HERO                        -->
