@@ -1,5 +1,4 @@
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
+let carrito = JSON.parse(localStorage.getItem("carrito") ?? "[]");
 
 function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
