@@ -52,9 +52,16 @@ const productos = document.querySelectorAll(".product-card");
 
 btnFiltro.addEventListener("click", () => {
 
-    const seleccionados = [...checkboxes]
-        .filter(ch => ch.checked)
-        .map(ch => ch.parentElement.textContent.trim());
+    const checkboxes = document.querySelectorAll(".filters__option input");
+    const productos = document.querySelectorAll(".product-card");
+
+    let categoriasSeleccionadas = [];
+
+    checkboxes.forEach(ch => {
+        if (ch.checked && ch.parentElement.textContent.trim() !== "Todas") {
+            categoriasSeleccionadas.push(ch.parentElement.textContent.trim());
+        }
+    });
 
     productos.forEach(card => {
 
@@ -63,10 +70,10 @@ btnFiltro.addEventListener("click", () => {
             .textContent.trim();
 
         if (
-            seleccionados.includes("Todas") ||
-            seleccionados.includes(categoria)
+            categoriasSeleccionadas.length === 0 ||
+            categoriasSeleccionadas.includes(categoria)
         ) {
-            card.style.display = "";
+            card.style.display = "block";
         } else {
             card.style.display = "none";
         }
