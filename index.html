@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendyShop — Viste tu estilo</title>
+
+    <!-- Bootstrap + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="styles/inicio.css">
+</head>
+<body>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <aside id="mobileMenu" class="mobile-nav">
+        <div class="mobile-nav-header">
+            <span>TrendyShop</span>
+            <button onclick="toggleMobileMenu()"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <nav>
+            <a href="#inicio" onclick="toggleMobileMenu()">Inicio</a>
+            <a href="#catalogo" onclick="toggleMobileMenu()">Catálogo</a>
+            <a href="#testimonios" onclick="toggleMobileMenu()">Quiénes Somos</a>
+            <a href="#faq" onclick="toggleMobileMenu()">Contáctanos</a>
+        </nav>
+    </aside>
+
+    <!-- ============================== -->
+    <!-- 1. TOP NAVBAR                   -->
+    <!-- ============================== -->
+    <header class="top-navbar sticky-top">
+        <nav class="custom-container navbar-content">
+            <div class="brand">TrendyShop</div>
+
+            <div class="desktop-links">
+                <a class="active" href="#inicio">Inicio</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#testimonios">Quiénes Somos</a>
+                <a href="#faq">Contáctanos</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <i class="bi bi-cart3"></i>
+                    <span id="cart-count">0</span>
+                </button>
+                <button class="mobile-menu" onclick="toggleMobileMenu()">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ============================== -->
+    <!-- 2. CARRITO LATERAL              -->
+    <!-- ============================== -->
+    <aside id="cartSidebar" class="cart-sidebar">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3>Mi Carrito</h3>
+            <button class="btn btn-danger btn-sm" onclick="toggleCart()">X</button>
+        </div>
+        <div id="cartItems"></div>
+        <hr>
+        <h5>Total: <span id="cartTotal">$0</span></h5>
+    </aside>
+
+    <!-- ============================== -->
+    <!-- 3. HERO                        -->
+    <!-- ============================== -->
+    <section id="inicio" class="hero-section">
+        <div class="custom-container hero-grid">
+            <div class="hero-content">
+                <h1 class="hero-title">Viste tu estilo con TrendyShop</h1>
+                <p class="hero-description">
+                    Encuentra ropa y accesorios que combinan calidad, estilo y precio justo.
+                    Una curaduría exclusiva para quienes buscan destacar.
+                </p>
+                <div class="hero-buttons">
+                    <button class="hero-btn-primary">Comprar ahora</button>
+                    <button class="hero-btn-secondary">Ver catálogo</button>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-glow"></div>
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwlT-P-YgWN1sAaTNhBNBOn_up9snkrQbO0rK2_vyaUq96Ef8QHVcVboKZ1I5f3LqYRTuT3AHHj-Uv3GZS8M6ixQWlzVo-41jm97DSpL3dIcWdCzJEY82lJCASeFynQHVftzcO3juhilHD8wMq5CCweDA2z1Ovim9uUoD077Pau36MnX3mkGIdUd3JfGJNl6dBPuYU1k9K74-d3-dRNo1u2_U-DuQvWqGdPXkNTDYgVd1ZRxjzscz4kXOkkzxQVNN6aARbc_dHd44"
+                     class="hero-image" alt="Modelo TrendyShop">
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- 4. TRUST (SELLOS DE CONFIANZA) -->
+    <!-- ============================== -->
+    <section id="confianza" class="trust-section">
+        <div class="custom-container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="bi bi-truck"></i></div>
+                    <h3>Envíos a todo el país</h3>
+                    <p>Rápido y seguro hasta tu puerta</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="bi bi-lock"></i></div>
+                    <h3>Pagos seguros</h3>
+                    <p>Tus transacciones protegidas</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="bi bi-patch-check"></i></div>
+                    <h3>Productos de calidad</h3>
+                    <p>Materiales premium garantizados</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon"><i class="bi bi-headset"></i></div>
+                    <h3>Atención al cliente</h3>
+                    <p>Estamos aquí para ayudarte</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- 5. FEATURED PRODUCTS           -->
+    <!-- ============================== -->
+    <section id="catalogo" class="featured-section">
+        <div class="custom-container">
+            <div class="featured-header">
+                <div>
+                    <span class="featured-label">TENDENCIAS</span>
+                    <h2>Productos Destacados</h2>
+                </div>
+                <a href="#catalogo">Ver todo <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="TU_IMAGEN" alt="Producto">
+                        <span class="product-badge badge-yellow">Nuevo</span>
+                        <button class="add-cart-btn" onclick="addToCart({id:1,name:'Camisa Lino Teal',price:45})">
+                            <i class="bi bi-cart-plus"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Camisa Lino Teal</h3>
+                        <p>Casual Masculino</p>
+                        <span class="price">$45.00</span>
+                    </div>
+                </div>
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="TU_IMAGEN" alt="Producto">
+                        <span class="product-badge badge-coral">Popular</span>
+                        <button class="add-cart-btn" onclick="addToCart({id:2,name:'Vestido Coral Flow',price:62})">
+                            <i class="bi bi-cart-plus"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Vestido Coral Flow</h3>
+                        <p>Colección Verano</p>
+                        <span class="price">$62.00</span>
+                    </div>
+                </div>
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="TU_IMAGEN" alt="Producto">
+                        <button class="add-cart-btn" onclick="addToCart({id:3,name:'Botas Chelsea Cuero',price:89})">
+                            <i class="bi bi-cart-plus"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Botas Chelsea Cuero</h3>
+                        <p>Calzado Premium</p>
+                        <span class="price">$89.00</span>
+                    </div>
+                </div>
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="TU_IMAGEN" alt="Producto">
+                        <span class="product-badge badge-red">-20%</span>
+                        <button class="add-cart-btn" onclick="addToCart({id:4,name:'Mochila Urban Mustard',price:38})">
+                            <i class="bi bi-cart-plus"></i>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3>Mochila Urban Mustard</h3>
+                        <p>Accesorios</p>
+                        <div class="price-row">
+                            <span class="price">$38.00</span>
+                            <span class="old-price">$48.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- 6. TESTIMONIALS                -->
+    <!-- ============================== -->
+    <section id="testimonios" class="testimonials-section">
+        <div class="custom-container">
+            <div class="testimonials-header">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <div class="header-underline"></div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="quote">“La calidad de la ropa superó mis expectativas. El envío fue rapidísimo.”</p>
+                    <div class="author">
+                        <img src="https://i.pravatar.cc/48?img=1" alt="María G." class="avatar">
+                        <div><strong>María G.</strong><span>Cliente frecuente</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="quote">“Me encanta la variedad de estilos. Finalmente una tienda que entiende lo que busco.”</p>
+                    <div class="author">
+                        <img src="https://i.pravatar.cc/48?img=5" alt="Carlos R." class="avatar">
+                        <div><strong>Carlos R.</strong><span>Comprador verificado</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="quote">“Atención al cliente de primer nivel. Me ayudaron a elegir la talla perfecta.”</p>
+                    <div class="author">
+                        <img src="https://i.pravatar.cc/48?img=3" alt="Lucía M." class="avatar">
+                        <div><strong>Lucía M.</strong><span>Nueva cliente</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- 8. NEWSLETTER                  -->
+    <!-- ============================== -->
+    <section id="comunidad" class="newsletter-section">
+        <div class="custom-container newsletter-content">
+            <h2>¡Únete a nuestra comunidad!</h2>
+            <p>Suscríbete para recibir ofertas exclusivas y consejos de estilo.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" required>
+                <button type="submit">Suscribirme</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ============================== -->
+    <!-- 9. FOOTER                      -->
+    <!-- ============================== -->
+    <footer class="footer-section">
+        <div class="custom-container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">TrendyShop</div>
+                <p>Tu destino favorito para moda contemporánea y accesorios de alta calidad.</p>
+            </div>
+            <div>
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#">Nuevos Ingresos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Soporte</h4>
+                <ul>
+                    <li><a href="#">Envíos</a></li>
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                    <li><a href="#">Pagos</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p>Calle Moda 123, Ciudad Trendy</p>
+                <p>hola@trendyshop.com</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="bi bi-globe"></i></a>
+                    <a href="#"><i class="bi bi-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom custom-container">
+            <p>© 2024 TrendyShop. Todos los derechos reservados.</p>
+            <div class="footer-links-bottom">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/inicio.js"></script>
+</body>
+</html>
